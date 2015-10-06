@@ -50,5 +50,5 @@ video {
 }
 
 #tablemenu ul li ul {
-	display: hidden;
+	display: none;
 }
