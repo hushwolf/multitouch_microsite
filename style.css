@@ -8,6 +8,7 @@ html, body {
 body {
 	background-image:url("/images/background.png");
 	transition: background 0.5s linear;
+	background-size: cover;
 }
 #svg {
 	background-color: rgb(243,112,104);
