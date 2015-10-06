@@ -1,0 +1,54 @@
+html, body {
+	margin: 0; 
+	padding: 0; 
+	overflow: hidden;
+	height: 100%;
+}
+
+body {
+	background-image:url("/images/background.png");
+	transition: background 0.5s linear;
+}
+#svg {
+	background-color: rgb(243,112,104);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: 1;
+}
+
+#Layer_1 {
+	fill: white;
+}
+
+video {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: 1;
+	background-image:url("/images/background.png");
+}
+
+#starting_links {
+	padding-top: 20px;
+}
+
+#content-block {
+	padding-top: 50px;
+}
+
+#tablemenu ul li ul {
+	display: hidden;
+}
