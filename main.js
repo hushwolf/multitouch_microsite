@@ -169,13 +169,13 @@ window.onload = function () {
     var counter = 0;
     var nav_info = [
         "",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas ipsum vitae libero tincidunt, sed rhoncus nisi rhoncus. Maecenas eget sollicitudin libero. Integer pretium fringilla euismod. Nullam porttitor, sapien id tincidunt finibus, sapien enim pulvinar urna, sed fringilla elit sapien at tellus. Sed vitae augue quis diam feugiat gravida et eget sem. In bibendum velit a tellus aliquam vehicula. Cras ornare cursus laoreet.",
-        "Piqued favour stairs it enable exeter as seeing. Remainder met improving but engrossed sincerity age. Better but length gay denied abroad are. Attachment astonished to on appearance imprudence so collecting in excellence. Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth. ",
-        "Consulted perpetual of pronounce me delivered. Too months nay end change relied who beauty wishes matter. Shew of john real park so rest we on. Ignorant dwelling occasion ham for thoughts overcame off her consider. Polite it elinor is depend. His not get talked effect worthy barton. Household shameless incommode at no objection behaviour. Especially do at he possession insensible sympathize boisterous it. Songs he on an widen me event truth. Certain law age brother sending amongst why covered. ",
-        "Arrived totally in as between private. Favour of so as on pretty though elinor direct. Reasonable estimating be alteration we themselves entreaties me of reasonably. Direct wished so be expect polite valley. Whose asked stand it sense no spoil to. Prudent you too his conduct feeling limited and. Side he lose paid as hope so face upon be. Goodness did suitable learning put. ",
-        "Perpetual sincerity out suspected necessary one but provision satisfied. Respect nothing use set waiting pursuit nay you looking. If on prevailed concluded ye abilities. Address say you new but minuter greater. Do denied agreed in innate. Can and middletons thoroughly themselves him. Tolerably sportsmen belonging in september no am immediate newspaper. Theirs expect dinner it pretty indeed having no of. Principle september she conveying did eat may extensive. ",
-        "Must you with him from him her were more. In eldest be it result should remark vanity square. Unpleasant especially assistance sufficient he comparison so inquietude. Branch one shy edward stairs turned has law wonder horses. Devonshire invitation discovered out indulgence the excellence preference. Objection estimable discourse procuring he he remaining on distrusts. Simplicity affronting inquietude for now sympathize age. She meant new their sex could defer child. An lose at quit to life do dull. ",
-        "Style never met and those among great. At no or september sportsmen he perfectly happiness attending. Depending listening delivered off new she procuring satisfied sex existence. Person plenty answer to exeter it if. Law use assistance especially resolution cultivated did out sentiments unsatiable. Way necessary had intention happiness but september delighted his curiosity. Furniture furnished or on strangers neglected remainder engrossed. "
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas ipsum vitae libero tincidunt, sed rhoncus nisi rhoncus. Maecenas eget sollicitudin libero. Integer pretium fringilla euismod. </br></br>Nullam porttitor, sapien id tincidunt finibus, sapien enim pulvinar urna, sed fringilla elit sapien at tellus. Sed vitae augue quis diam feugiat gravida et eget sem. In bibendum velit a tellus aliquam vehicula. Cras ornare cursus laoreet.",
+        "Piqued favour stairs it enable exeter as seeing. Remainder met improving but engrossed sincerity age. Better but length gay denied abroad are. Attachment astonished to on appearance imprudence so collecting in excellence. </br></br>Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth. ",
+        "Consulted perpetual of pronounce me delivered. Too months nay end change relied who beauty wishes matter. Shew of john real park so rest we on. Ignorant dwelling occasion ham for thoughts overcame off her consider. Polite it elinor is depend. </br></br> His not get talked effect worthy barton. Household shameless incommode at no objection behaviour. Especially do at he possession insensible sympathize boisterous it. Songs he on an widen me event truth. Certain law age brother sending amongst why covered. ",
+        "Arrived totally in as between private. Favour of so as on pretty though elinor direct. Reasonable estimating be alteration we themselves entreaties me of reasonably. </br></br>Direct wished so be expect polite valley. Whose asked stand it sense no spoil to. Prudent you too his conduct feeling limited and. Side he lose paid as hope so face upon be. Goodness did suitable learning put. ",
+        "Perpetual sincerity out suspected necessary one but provision satisfied. Respect nothing use set waiting pursuit nay you looking. If on prevailed concluded ye abilities. Address say you new but minuter greater.</br></br> Do denied agreed in innate. </br></br> Can and middletons thoroughly themselves him. Tolerably sportsmen belonging in september no am immediate newspaper. Theirs expect dinner it pretty indeed having no of. Principle september she conveying did eat may extensive. ",
+        "Must you with him from him her were more. In eldest be it result should remark vanity square. Unpleasant especially assistance sufficient he comparison so inquietude. </br></br>Branch one shy edward stairs turned has law wonder horses. Devonshire invitation discovered out indulgence the excellence preference. Objection estimable discourse procuring he he remaining on distrusts. Simplicity affronting inquietude for now sympathize age. She meant new their sex could defer child. An lose at quit to life do dull. ",
+        "Style never met and those among great. At no or september sportsmen he perfectly happiness attending. Depending listening delivered off new she procuring satisfied sex existence. Person plenty answer to exeter it if. </br></br>Law use assistance especially resolution cultivated did out sentiments unsatiable. Way necessary had intention happiness but september delighted his curiosity. Furniture furnished or on strangers neglected remainder engrossed. "
     ];
 
     var nav_links = [
@@ -227,11 +227,9 @@ window.onload = function () {
             $(document.body).css('background-image', 'url(/images/background.png)');
         }   
     });
-/**
-    (function () {
-         $('#tablemenu ul li ul').hide();
-     });
-**/}
+
+
+}
 
 
 

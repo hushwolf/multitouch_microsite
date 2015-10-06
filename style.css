@@ -57,13 +57,14 @@ video {
     height: 30%;
     margin: auto;
 }
-
+/**
 #nav-information {
 	padding-bottom: 10px;
 	border-bottom-color: white;
-	border-bottom-width: 2px; 
+	border-bottom-width: 2px;
+	border-bottom-style: solid; 
 }
-
+**/
 #tablemenu ul li ul {
 	display: none;
 }
