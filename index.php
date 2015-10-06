@@ -18,7 +18,7 @@
 	<div class="svg_animation">
 		<svg id="svg"></svg>
 	</div>
-	<div class="units-row units-split" id="starting_links">
+	<div class="units-row" id="starting_links">
 
 		<div class="unit-push-10 unit-10">
 			<a id="ideumicon" href="http://ideum.com">
@@ -35,7 +35,7 @@
 		</div>
 	</div>
 
-	<div class="units-row units-split" id="content-block">
+	<div class="units-row" id="content-block">
 		<div class="unit-push-10 unit-25">	
 			<nav id="tablemenu" class="nav">
 				<ul>

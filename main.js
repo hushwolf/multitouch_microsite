@@ -1,4 +1,4 @@
-// SVG Animations which include timing and viewbox
+// SVG Animations for introduction
 // ==========================================================================
 
 window.onload = function () {
@@ -162,6 +162,14 @@ window.onload = function () {
 
     setTimeout(function(){
         $('video').remove();}, 14000);
+
+    // Circular Key Features Animation
+    (function () {
+        if (counter == 7){
+            $(document.body.createElement('svg')).attr({id: "svg2"});
+            
+        }
+    })
 
     // Page contents
     // ========================================================================================================
