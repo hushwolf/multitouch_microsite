@@ -50,6 +50,12 @@ video {
 	padding-top: 50px;
 }
 
+#nav-information {
+	padding-bottom: 10px;
+	border-bottom-color: white;
+	border-bottom-width: 2px; 
+}
+
 #tablemenu ul li ul {
 	display: none;
 }

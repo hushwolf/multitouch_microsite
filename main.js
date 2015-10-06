@@ -1,4 +1,5 @@
 // SVG Animations which include timing and viewbox
+// ==========================================================================
 
 window.onload = function () {
 	var s = Snap("svg");
@@ -163,6 +164,7 @@ window.onload = function () {
         $('video').remove();}, 14000);
 
     // Page contents
+    // ========================================================================================================
 
     var counter = 0;
     var nav_info = [
@@ -182,6 +184,7 @@ window.onload = function () {
     ];
 
     //Page directing code, includes mouse scrolling events
+    // =============================================================================================================
 
     $('#up_arrow').click(function(){
         if (counter <= 0){
@@ -212,6 +215,7 @@ window.onload = function () {
     });
 
     // Image rendering for each specific content
+    // ===================================================================================================================
     $('#down_arrow, #up_arrow').click(function() {
         if (counter == 1) {
             $(document.body).css('background-image', 'url(/images/touch.jpg)');

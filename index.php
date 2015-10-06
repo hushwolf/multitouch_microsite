@@ -83,7 +83,6 @@
 		</div>
 		<div class="unit-20">
 			<div id="nav-information">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas ipsum vitae libero tincidunt, sed rhoncus nisi rhoncus. Maecenas eget sollicitudin libero. Integer pretium fringilla euismod. Nullam porttitor, sapien id tincidunt finibus, sapien enim pulvinar urna, sed fringilla elit sapien at tellus. Sed vitae augue quis diam feugiat gravida et eget sem. In bibendum velit a tellus aliquam vehicula. Cras ornare cursus laoreet.</p>
 			</div>
 		</div>
 		<div class="unit-push-40">
@@ -91,7 +90,7 @@
 				<img src="images/up_arrow.png" width="64px" height="64px">
 			</button>
 		</div>
-		<div class="unit-push-10">
+		<div class="unit-push-40">
 			<button id="down_arrow">
 				<img src="images/down_arrow.png" width="64px" height="64px">
 			</button>
