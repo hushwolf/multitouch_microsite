@@ -18,22 +18,26 @@
 	<div class="svg_animation">
 		<svg id="svg"></svg>
 	</div>
-	<div class="units-row" id="starting_links">
+	<a id="ideumicon" href="http://ideum.com">
+		<img src="images/logo-new.png">
+	</a>
+	<a id="downloadicon" href="">
+		<img src="images/download.png" width="64px" height="64px">
+	</a>
+	<a id="socialicon" href="">
+		<img src="images/share_this.png">
+	</a>
+	<a id="tableicon" href="http://ideum.com/touch-tables/">
+		<img src="images/table.jpg" width="64px" height="64px">
+	</a>
 
-		<div class="unit-push-10 unit-10">
-			<a id="ideumicon" href="http://ideum.com">
-				<img src="images/logo-new.png">
-			</a>
-		</div>
-		<div class="unit-push-70 unit-20">
-			<a id="socialicon" href="">
-				<img src="images/share_this.png">
-			</a>
-			<a id="tableicon" href="http://ideum.com/touch-tables/">
-				<img src="images/table.jpg" width="64px" height="64px">
-			</a>
-		</div>
-	</div>
+	<button id="up_arrow">
+		<img src="images/up_arrow.png" width="64px" height="64px">
+	</button>
+
+	<button id="down_arrow">
+		<img src="images/down_arrow.png" width="64px" height="64px">
+	</button>
 
 	<div class="units-row" id="content-block">
 		<div class="unit-push-10 unit-25">	
@@ -75,7 +79,6 @@
 						</ul>
 					</li>	
 					<li>UPGRADES</li>
-					<li>SPECIFICATIONS</li>
 					<li>GALLERY</li>
 					<li>CONTACT</li>
 				</ul>
@@ -85,16 +88,10 @@
 			<div id="nav-information">
 			</div>
 		</div>
-		<div class="unit-push-40">
-			<button id="up_arrow">
-				<img src="images/up_arrow.png" width="64px" height="64px">
-			</button>
+		<div class="unit-40">
+			<div id="table_image">
+			</div>
 		</div>
-		<div class="unit-push-40">
-			<button id="down_arrow">
-				<img src="images/down_arrow.png" width="64px" height="64px">
-			</button>
-		</div>	
-	</div>	
+	</div>
 </body>
 </html>
