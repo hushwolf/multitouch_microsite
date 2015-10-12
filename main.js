@@ -2,7 +2,17 @@
 // ==========================================================================
 
 window.onload = function () {
-    
+
+    // Elements to be hidden on load
+    $('#up_arrow').fadeOut(250);
+    $('#down_arrow').fadeOut(250);
+    $('#nav-info1').fadeOut(250);
+    $('#nav-info2').fadeOut(250);
+    $('#nav-info3').fadeOut(250);
+    $('#dig_deeper').fadeOut(250);
+    $('#section2').fadeOut(250);
+    $('#section3').fadeOut(250);
+
 	var s = Snap("svg");
     var g = s.group();
     var hand = Snap.load("hand icon.svg", function (loadedFragment) {
@@ -165,13 +175,41 @@ window.onload = function () {
     setTimeout(function(){
         $('video').remove();}, 14500);
 
+    // Nav button content
+    // ================================================================================================================
+    $('#section1navitem1').click(function(){
+        $('#down_arrow').fadeIn(250);
+        $('#up_arrow').fadeOut(250);
+        $('#dig_deeper').fadeIn(250);
+        $('#nav-info1').fadeIn(250);
+        $('#nav-info2').fadeOut(250);
+        $('#nav-info3').fadeOut(250);
+        $('#table_image').fadeIn(250);
+    });
+
+    $('#section1navitem2').click(function(){
+        $('#down_arrow').fadeIn(250);
+        $('#up_arrow').fadeIn(250);
+        $('#dig_deeper').fadeIn(250);
+        $('#nav-info1').fadeOut(250);
+        $('#nav-info2').fadeIn(250);
+        $('#nav-info3').FadeOut(250);
+    });
+
+    $('#section1navitem3').click(function(){
+        $('#down_arrow').fadeIn(250);
+        $('#up_arrow').fadeIn(250);
+        $('#dig_deeper').fadeIn(250);
+        $('#nav-info1').fadeOut(250);
+        $('#nav-info2').fadeOut(250);
+        $('#nav-info3').FadeIn(250);
+    });
+
     // Page contents
     // ========================================================================================================
 
     var counter = 0;
-    var MULTITOUCH_info = "The multitouch technology featured in the Platform 55 4K P-CAP is the same reliable touch technology used in popular smartphones and tablets. This technology is impervious to light interference and provides superior responsiveness and accuracy. The bezel-less surface is water and dust resistant.";
-
-    //Page directing code and changing content
+    //Multitouch Table page directing and changing content
     // =============================================================================================================
 
     $('#up_arrow').click(function(){
@@ -179,8 +217,9 @@ window.onload = function () {
         if (counter <= 0)
         {
             counter == 0;
-            $('#nav-information').fadeOut(250, function() {
-                $(this).html("<p>" + MULTITOUCH_info + "</p>").fadeIn(250);
+            $('#nav-info1').fadeIn(500, function() {
+                $('#nav-info2').fadeOut(250);
+                $('#nav-info3').fadeOut(250);
             });   
             $('#table_image').fadeOut(250, function() {
                 $(this).attr('src', '/images/platform_table.png').fadeIn(250);
@@ -188,7 +227,10 @@ window.onload = function () {
             $('#up_arrow').fadeOut(250);
         }
         if (counter == 1) {
-            $('#nav-information').fadeOut(250);
+            $('#nav-info2').fadeIn(500, function() {
+                $('#nav-info1').fadeOut(250);
+                $('#nav-info3').fadeOut(250);
+            });
             $('#table_image').fadeOut(250, function() {
                 $(this).attr('src', '/images/platform_table.png').fadeIn(250);
             });
@@ -202,22 +244,27 @@ window.onload = function () {
         if (counter >= 2)
         {
             counter == 2;
-
+            $('#nav-info3').fadeIn(500, function() {
+                $('#nav-info1').fadeOut(250);
+                $('#nav-info2').fadeOut(250);
+            });
             $('#table_image').fadeOut(250, function() {
                 $(this).attr('src', '/images/platform_table.png').fadeIn(250);
-                $('#dig_deeper').fadeOut(250);
             });
+            $('#dig_deeper').fadeOut(250);
             $('#down_arrow').fadeOut(250);
         }
         if (counter == 1) {
-            $('#nav-information').fadeOut(250);
+            
+            $('#nav-info2').fadeIn(500, function() {
+                $('#nav-info1').fadeOut(250);
+                $('#nav-info3').fadeOut(250);
+            });
             $('#table_image').fadeOut(250, function() {
                 $(this).attr('src', '/images/platform_table.png').fadeIn(250);
             });
             $('#up_arrow, #down_arrow').fadeIn(250);
             $('#dig_deeper').fadeIn(250);
         }
-
-
     });
 }
