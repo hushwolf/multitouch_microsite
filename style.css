@@ -1,16 +1,9 @@
 html, body {
 	margin: 0; 
 	padding: 0; 
-	overflow: hidden;
-	height: 100%;
-	position: relative;
+	color:#fff;
 }
 
-body {
-	background-image:url("/images/background.png");
-	transition: background 0.5s linear;
-	background-size: cover;
-}
 #svg {
 	background-color: rgb(243,112,104);
 	position: fixed;
@@ -30,17 +23,14 @@ body {
 }
 
 video {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	z-index: 1;
 	background-image:url("/images/background.png");
+	height: auto;
+	min-height: 100%;
+	min-width: 100%;
+	position: fixed;
+		top: 0; right: 0; bottom: 0; left: 0;
+	width: auto;
+	z-index: 1;
 }
 
 #starting_links {
@@ -48,22 +38,158 @@ video {
 }
 
 #content-block {
+  height: 30%;
+  margin: auto;
 	padding-top: 50px;
 	position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 30%;
-    margin: auto;
+    top: 0; right: 0; bottom: 0; left: 0;
 }
 
 #nav-information {
-	padding-bottom: 10px;
 	border-bottom-color: white;
 	border-bottom-width: 2px; 
+	padding: .5em 0 10px;
 }
 
-#tablemenu ul li ul {
-	display: none;
+body {
+	background-color: #F3857E;
+	padding-top:1px;
+	position:relative;
 }
+
+/* ### begin clearfix helper class ### */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.clearfix { 
+	display:inline-block; 
+}
+/* start commented backslash hack for clearfix \*/
+* html .clearfix { 
+	height:1%; 
+}
+.clearfix { 
+	display:block; 
+}
+/* close commented backslash hack for clearfix */
+/* ### end clearfix helper class ### */
+
+#scrollnav {
+	height: 112px;
+	margin: auto;
+	position: fixed;
+		top: 0; right: 0; bottom: 0; /* do not set left value */
+}
+
+/* ### begin menu styles ### */
+#menu {
+	position:fixed;
+		top:30%;
+}
+.nav { /* aka tablemenu */
+	background-color:transparent;
+	color:#fff;
+	position:fixed;
+		top:30%;
+	transition: all 0.25s ease;
+}
+#tablemenu ul {
+	list-style: none;
+}
+/* defualt values for viewability of sub-navigation */
+#tablemenu ul li ul  {
+	display:none;
+}
+#tablemenu ul li a {
+	color:#fff;
+	text-transform: uppercase;
+}
+/* ### begin menu styles ### */
+
+#text {
+	position:fixed;
+		top:30%;
+}
+#menu {
+	position:fixed;
+		top:30%;
+}
+#starting_links {
+	position:fixed;
+	width:100%;
+}
+#tableicon img {
+ width:64px;
+}
+
+/* starting (section1) values for viewability of sub-navigation - show #section1navitemsub-navigation only */
+#tablemenu.section1 ul li#section1navitem ul  {
+	display:block !important;
+}
+#tablemenu.section1 ul li#section2navitem ul  {
+	display:none;
+}
+#tablemenu.section1 ul li#section3navitem ul  {
+	display:none;
+}
+
+/* section2 values for viewability of sub-navigation - show #section2navitem sub-navigation only */
+#tablemenu.section2 ul li#section1navitem ul  {
+	display:none;
+}
+#tablemenu.section2 ul li#section2navitem ul  {
+	display:block;
+}
+#tablemenu.section2 ul li#section3navitem ul {
+	display:none;
+}
+
+/* section3 values for viewability of sub-navigation - show #section3navitem sub-navigation only */
+#tablemenu.past-section3 ul li#section1navitem ul  {
+	display:none;
+}
+#tablemenu.section3 ul li#section2navitem ul  {
+	display:none;
+}
+#tablemenu.section3 ul li#section3navitem ul {
+	display:block;
+}
+
+#tablemenu ul li.on {
+	color:#666;
+	font-weight:bold; /*temp use only*/
+}
+#tablemenu ul li.on ul li {
+	color:#fff;
+	font-weight:normal; /*temp use only*/
+}
+#section1, #section2, #section3  {
+	background-image:none;
+	background-size:cover;
+	height:100vh;
+	transition:background 0.5s linear;
+}
+#section1 {
+	background-image:url(/images/background.png);
+	position:inherit;
+}
+#section2 {
+	background-image:url(/images/touch.jpg);
+	position:inherit;
+}
+#section3 {
+	background-image:url(/images/background.png);
+	position:inherit;
+}
+
+.text-display {
+	position:relative;
+		top:30%;
+	visibility: hidden;
+}
+
