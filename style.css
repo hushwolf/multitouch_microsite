@@ -8,7 +8,6 @@ html, body {
 
 body {
 	background-image:url("/images/background.png");
-	transition: background 0.5s ease-in-out;
 	background-size: cover;
 }
 #svg {
@@ -22,7 +21,7 @@ body {
 	min-height: 100%;
 	width: auto;
 	height: auto;
-	z-index: 1;
+	z-index: 5;
 	margin: 0 auto;
 }
 
@@ -40,14 +39,14 @@ video {
 	min-height: 100%;
 	width: auto;
 	height: auto;
-	z-index: 1;
+	z-index: 5;
 	background-image:url("/images/background.png");
 }
 
 #ideumicon {
 	position: fixed;
-	top: 30px;
-	left: 200px;
+	top: 40px;
+	left: 185px;
 	z-index: 0;
 }
 
@@ -68,7 +67,7 @@ video {
 
 #tableicon {
 	position: fixed;
-	top: 50px;
+	top: 45px;
 	right: 200px;
 	z-index: 0;
 }
@@ -77,39 +76,121 @@ video {
 	position: fixed;
 	top: 400px;
 	right: 200px;
-
+	z-index: 2;
+	cursor: pointer;
 }
 
 #down_arrow {
 	position: fixed;
 	top: 500px;
 	right: 200px;
+	z-index: 2;
+	cursor: pointer;
 }
 
-#content-block {
-	padding-top: 50px;
-	position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 30%;
-    margin: auto;
-}
-/**
-#nav-information {
-	padding-bottom: 10px;
-	border-bottom-color: white;
-	border-bottom-width: 2px;
-	border-bottom-style: solid; 
-}
-**/
-
-#tablemenu ul{
+#dig_deeper {
+	position: fixed;
+	top: 565px;
+	right: 185px;
+	z-index: 2;
 	color: white;
 }
 
-#tablemenu ul li ul {
-	display: none;
+#scrollnav {
+height: 112px;
+margin: auto;
+position: fixed;
+	top: 0; right: 0; bottom: 0; /* do not set left value */
+}
 
+/* ### begin menu styles ### */
+#menu {
+	position:fixed;
+	top:30%;
+}
+.nav { /* aka tablemenu */
+background-color:transparent;
+color:#fff;
+transition: all 0.25s ease;
+position:fixed;
+top:30%;
+}
+
+.nav a {
+	color: white;
+}
+
+#content-text {
+	position: fixed;
+	top: 30%;
+}
+
+/* starting (section1) values for viewability of sub-navigation - show #section1navitemsub-navigation only */
+#tablemenu.section1 ul li#section1navitem ul  {
+	display:block !important;
+}
+#tablemenu.section1 ul li#section2navitem ul  {
+	display:none;
+}
+#tablemenu.section1 ul li#section3navitem ul  {
+	display:none;
+}
+
+/* section2 values for viewability of sub-navigation - show #section2navitem sub-navigation only */
+#tablemenu.section2 ul li#section1navitem ul  {
+	display:none;
+}
+#tablemenu.section2 ul li#section2navitem ul  {
+	display:block;
+}
+#tablemenu.section2 ul li#section3navitem ul {
+	display:none;
+}
+
+/* section3 values for viewability of sub-navigation - show #section3navitem sub-navigation only */
+#tablemenu.past-section3 ul li#section1navitem ul  {
+	display:none;
+}
+#tablemenu.section3 ul li#section2navitem ul  {
+	display:none;
+}
+#tablemenu.section3 ul li#section3navitem ul {
+	display:block;
+}
+
+#tablemenu ul {
+	list-style: none;
+}
+
+#tablemenu ul li.on {
+	color:#666;
+	font-weight:bold; /*temp use only*/
+}
+#tablemenu ul li.on ul li {
+	color:#fff;
+	font-weight:normal; /*temp use only*/
+}
+
+
+#nav-information p {
+	color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: white;
+	border-top-style: solid;
+	border-top-width: 2px;
+	border-top-color: white;
+	font-family: "Lato Regular";
+	font-size: 18px;
+	max-width: 350px;
+}
+
+#table_image {
+	position: fixed;
+	top : 125px;
+	right: 100px;
+	width:	auto;
+	height: auto;
 }

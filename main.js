@@ -2,11 +2,12 @@
 // ==========================================================================
 
 window.onload = function () {
+    
 	var s = Snap("svg");
     var g = s.group();
     var hand = Snap.load("hand icon.svg", function (loadedFragment) {
         g.append( loadedFragment);
-        g.transform("t6, -201");
+        g.transform("s0.75, s0.75t4, -383")
         setTimeout(function(){g.animate({opacity:"0"}, 1000)}, 2000);
     });
 
@@ -14,10 +15,10 @@ window.onload = function () {
     s.attr("preserveAspectRatio", "xMinYMin meet");
     
     setTimeout(function(){
-        var c1 = s.circle(500, 250, 8).attr({
+        var c1 = s.circle(500, 250, 5).attr({
             fill: 'none',
             stroke: 'white',
-            strokeWidth: 4
+            strokeWidth: 2
         });
 
         var c2 = c1.clone();
@@ -143,10 +144,7 @@ window.onload = function () {
         setTimeout(text_animate3, 2900);
     }, 500);
 
-    setTimeout(function(){s.animate({opacity: 0}, 1500)}, 7200);
-
-    setTimeout(function() {
-        $('svg').remove();}, 8700);
+    setTimeout(function(){s.animate({opacity: 0}, 1500)}, 7700);
 
     setTimeout(function(){
         var video = document.createElement('video');
@@ -155,93 +153,71 @@ window.onload = function () {
         var source = document.createElement('source');
         source.setAttribute('src', '/videos/Presenter.mp4');
         document.getElementById('video').appendChild(source);
-        document.getElementById('video').style.height = "100%";
-        document.getElementById('video').style.width = "50%";
         document.getElementById('video').setAttribute('style', '');
         document.getElementById('video').setAttribute('autoplay', 'autoplay');
-        $('video').fadeIn(1000);
         $('video').bind('ended', function() {
             $(this).animate({opacity: 0}, 1000); })
-    }, 7200);
+    }, 7700);
 
     setTimeout(function(){
-        $('video').remove();}, 14000);
+        $('svg').remove();}, 14000);
 
-    // Circular Key Features Animation
-    (function () {
-        if (counter == 7){
-            $(document.body.createElement('svg')).attr({id: "svg2"});
-
-        }
-    })
+    setTimeout(function(){
+        $('video').remove();}, 14500);
 
     // Page contents
     // ========================================================================================================
 
     var counter = 0;
-    var nav_info = [
-        "",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas ipsum vitae libero tincidunt, sed rhoncus nisi rhoncus. Maecenas eget sollicitudin libero. Integer pretium fringilla euismod. </br></br>Nullam porttitor, sapien id tincidunt finibus, sapien enim pulvinar urna, sed fringilla elit sapien at tellus. Sed vitae augue quis diam feugiat gravida et eget sem. In bibendum velit a tellus aliquam vehicula. Cras ornare cursus laoreet.",
-        "Piqued favour stairs it enable exeter as seeing. Remainder met improving but engrossed sincerity age. Better but length gay denied abroad are. Attachment astonished to on appearance imprudence so collecting in excellence. </br></br>Tiled way blind lived whose new. The for fully had she there leave merit enjoy forth. ",
-        "Consulted perpetual of pronounce me delivered. Too months nay end change relied who beauty wishes matter. Shew of john real park so rest we on. Ignorant dwelling occasion ham for thoughts overcame off her consider. Polite it elinor is depend. </br></br> His not get talked effect worthy barton. Household shameless incommode at no objection behaviour. Especially do at he possession insensible sympathize boisterous it. Songs he on an widen me event truth. Certain law age brother sending amongst why covered. ",
-        "Arrived totally in as between private. Favour of so as on pretty though elinor direct. Reasonable estimating be alteration we themselves entreaties me of reasonably. </br></br>Direct wished so be expect polite valley. Whose asked stand it sense no spoil to. Prudent you too his conduct feeling limited and. Side he lose paid as hope so face upon be. Goodness did suitable learning put. ",
-        "Perpetual sincerity out suspected necessary one but provision satisfied. Respect nothing use set waiting pursuit nay you looking. If on prevailed concluded ye abilities. Address say you new but minuter greater.</br></br> Do denied agreed in innate. </br></br> Can and middletons thoroughly themselves him. Tolerably sportsmen belonging in september no am immediate newspaper. Theirs expect dinner it pretty indeed having no of. Principle september she conveying did eat may extensive. ",
-        "Must you with him from him her were more. In eldest be it result should remark vanity square. Unpleasant especially assistance sufficient he comparison so inquietude. </br></br>Branch one shy edward stairs turned has law wonder horses. Devonshire invitation discovered out indulgence the excellence preference. Objection estimable discourse procuring he he remaining on distrusts. Simplicity affronting inquietude for now sympathize age. She meant new their sex could defer child. An lose at quit to life do dull. ",
-        "Style never met and those among great. At no or september sportsmen he perfectly happiness attending. Depending listening delivered off new she procuring satisfied sex existence. Person plenty answer to exeter it if. </br></br>Law use assistance especially resolution cultivated did out sentiments unsatiable. Way necessary had intention happiness but september delighted his curiosity. Furniture furnished or on strangers neglected remainder engrossed. "
-    ];
+    var MULTITOUCH_info = "The multitouch technology featured in the Platform 55 4K P-CAP is the same reliable touch technology used in popular smartphones and tablets. This technology is impervious to light interference and provides superior responsiveness and accuracy. The bezel-less surface is water and dust resistant.";
 
-    var nav_links = [
-    $('#touch_best'),
-    $('#capactive_touch')
-    ];
-
-    //Page directing code, includes mouse scrolling events
+    //Page directing code and changing content
     // =============================================================================================================
 
     $('#up_arrow').click(function(){
-        if (counter <= 0){
-            counter = 0;
-            //console.log(counter);
-        }
-        else {
-            counter -= 1;
-            //console.log(counter);
-            $('#nav-information').fadeOut(500, function() {
-                $(this).html("<p>" + nav_info[counter] + "</p>").fadeIn(250);         
+        counter -= 1;
+        if (counter <= 0)
+        {
+            counter == 0;
+            $('#nav-information').fadeOut(250, function() {
+                $(this).html("<p>" + MULTITOUCH_info + "</p>").fadeIn(250);
+            });   
+            $('#table_image').fadeOut(250, function() {
+                $(this).attr('src', '/images/platform_table.png').fadeIn(250);
             });
+            $('#up_arrow').fadeOut(250);
+        }
+        if (counter == 1) {
+            $('#nav-information').fadeOut(250);
+            $('#table_image').fadeOut(250, function() {
+                $(this).attr('src', '/images/platform_table.png').fadeIn(250);
+            });
+            $('#up_arrow, #down_arrow').fadeIn(250);
+            $('#dig_deeper').fadeIn(250);
         }
     });
 
     $('#down_arrow').click(function(){
-        if (counter >= 7){
-            counter = 7;
-            //console.log(counter);
-        }
-        else {
-            counter += 1;
-            //console.log(counter);
-            $('#nav-information').fadeOut(500, function() {
-                $(this).html("<p>" + nav_info[counter] + "</p>").fadeIn(250);         
+        counter += 1;
+        if (counter >= 2)
+        {
+            counter == 2;
+
+            $('#table_image').fadeOut(250, function() {
+                $(this).attr('src', '/images/platform_table.png').fadeIn(250);
+                $('#dig_deeper').fadeOut(250);
             });
+            $('#down_arrow').fadeOut(250);
         }
-    });
-
-    // Image rendering for each specific content
-    // ===================================================================================================================
-    $('#down_arrow, #up_arrow').click(function() {
         if (counter == 1) {
-            $('#table_image').css('background-image', 'url(/images/touch.jpg)');
+            $('#nav-information').fadeOut(250);
+            $('#table_image').fadeOut(250, function() {
+                $(this).attr('src', '/images/platform_table.png').fadeIn(250);
+            });
+            $('#up_arrow, #down_arrow').fadeIn(250);
+            $('#dig_deeper').fadeIn(250);
         }
-        else if (counter == 4){
-            console.log("New image will show up here");
-        }
-        else {
-            $('#table_image').css('background-image', 'url(/images/people.png)');
-        }   
+
+
     });
-
-
 }
-
-
-
