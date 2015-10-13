@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html class=''>
+<html>
+
 <head>
 
 	<title>Multi-touch Table Microsite</title>
@@ -16,12 +17,18 @@
 	<script src="main.js"></script>
 
 </head>
+
 <body>
+
+	<div class="svg_animation">
+		<svg id="svg"></svg>
+		<svg id="svg2"></svg>
+	</div>
 
 <div class="units-row units-split" id="starting_links">
 
 	<div class="unit-push-10 unit-20">
-		<a id="ideumicon" href="http://ideum.com">
+		<a id="ideumicon" href="">
 			<img src="images/ideum_logo.png">
 		</a>
 	</div>
@@ -30,7 +37,7 @@
 			<img src="images/share_this.png">
 		</a>
 		<a id="tableicon" href="http://ideum.com/touch-tables/">
-			<img src="images/table.jpg">
+			<img src="images/table_icon.png">
 		</a>
 	</div>
 </div>
@@ -38,10 +45,10 @@
 <section class="unit-push-10 unit-20" id="menu">
 	<nav id="tablemenu" class="nav">
 		<ul>
-			<li id="section1navitem"><a href="#section1">The Multitouch Table</a>
+			<li id="section1navitem" class="on"><a id="section1navitem1" href="#section1">The Multitouch Table</a>
 				<ul>
-					<li>Latest In Touch</a>
-					<li>Key Features</li>
+					<li><a href="#" id="section1navitem2">LATEST IN TOUCH</a></li>
+					<li><a href="#" id="section1navitem3">KEY FEATURES</a></li>
 				</ul>
 			</li>	
 			<li id="section2navitem"><a href="#section2">Gallery</a></li>
@@ -51,21 +58,21 @@
 </section>
 
 <section class="unit-push-40 unit-20" id="text">
-	<div id="nav-information">Section 1 Text. This text is visible to the user until the first scroll but is still useful for SEO purposes. it is a counterpart of the text found in the javascript below.</div>
+	<div id="content-information">This section 1 content is hidden from the user but is useful for SEO purposes. It is the counterpart of the text found in the javascript below.</div>
 </section>
 
 <section id="scrollnav" class="unit-push-80 unit-5">
 
-	<div class="">
-		<button id="up_arrow">
-			<img src="images/up_arrow.png" width="64px" height="64px">
-		</button>
-	</div>
-
-	<div class="">
-		<button id="down_arrow">
-			<img src="images/down_arrow.png" width="64px" height="64px">
-		</button>
+	<div class="up-down-arrows">
+		<div id="up_arrow">
+			<img src="images/up_arrow.png">
+		</div>
+		<div id="down_arrow" class="on goto1a">
+			<img src="images/down_arrow.png">
+		</div>
+		<div id="dig_deeper" class="on">
+			<p>DIG DEEPER</p>
+		</div>
 	</div>
 
 </section>
@@ -75,8 +82,14 @@
 	<a class="anchorlink" name="section1"></a>
 	<section id="section1">
 
-		<div id="text-display-1" class="text-display unit-push-40 unit-25">
-			Section 1 Text. This text is hidden from the user but is useful for SEO purposes. This text is the counterpart of the text found in the javascript below.
+		<div id="content-display-1" class="text-display unit-push-40 unit-25">
+			This section 1 content is hidden from the user but is useful for SEO purposes. It is the counterpart of the text found in the javascript below.
+		</div>
+		<div id="content-display-1a" class="text-display unit-push-40 unit-25">
+			This section 1a content is hidden from the user but is useful for SEO purposes. It is the counterpart of the text found in the javascript below.
+		</div>
+		<div id="content-display-1b" class="text-display unit-push-40 unit-25">
+			This section 1b content is hidden from the user but is useful for SEO purposes. It is the counterpart of the text found in the javascript below.
 		</div>
 
 	</section>
@@ -84,8 +97,8 @@
 	<a class="anchorlink" name="section2"></a>
 	<section id="section2">
 
-		<div id="text-display-2" class="text-display unit-push-40 unit-25">
-			Section 2 Text. This text is hidden from the user but is useful for SEO purposes. This text is the counterpart of the text found in the javascript below.
+		<div id="content-display-2" class="text-display unit-push-40 unit-25">
+			This section 2 content is hidden from the user but is useful for SEO purposes. It is the counterpart of the text found in the javascript below.
 		</div>
 
 	</section>
@@ -93,8 +106,8 @@
 	<a class="anchorlink" name="section3"></a>
 	<section id="section3">
 
-		<div id="text-display-3" class="text-display unit-push-40 unit-25">
-			Section 3 Text. This text is hidden from the user but is useful for SEO purposes. This text is the counterpart of the text found in the javascript below.
+		<div id="content-display-3" class="text-display unit-push-40 unit-25">
+			This section 3 content is hidden from the user but is useful for SEO purposes. It is the counterpart of the text found in the javascript below.
 		</div>
 
 	</section>
@@ -137,14 +150,140 @@
 
 $(document).ready(function($) {
 
-  var $win = $(window);
+  var $win = $(window); // set the win var
   var winvh = $win.height(); // Get the window height.
 
-  $win.on("scroll", function () { // on scroll do
+
+  // Nav button content
+    // ================================================================================================================
+    $('#section1navitem1').click(function(){ // if #section1navitem1 clicked 
+      $("#content-information").text("This section 1 content is visible to the user but is not useful for SEO purposes it gets switched out via javascript.");
+
+    	$('#up_arrow').removeClass('on');
+    	$('#up_arrow').removeClass('goto1');
+    	$('#up_arrow').removeClass('goto1a');
+
+    	$('#down_arrow').addClass('on');
+    	$('#down_arrow').addClass('goto1a');
+    	$('#down_arrow').removeClass('goto1b');
+
+      $('#dig_deeper').addClass('on');
+
+      $('#section1navitem2').removeClass('on');
+      $('#section1navitem3').removeClass('on');
+    });
+
+    $('#up_arrow').click(function(){ // if #up_arrow clicked
+      
+			if ( $(this).hasClass("goto1") ) {
+	      $("#content-information").text("This section 1 content is visible to the user but is not useful for SEO purposes it gets switched out via javascript.");
+
+	    	$('#up_arrow').removeClass('on');
+	    	$('#up_arrow').removeClass('goto1');
+	    	$('#up_arrow').removeClass('goto1a');
+
+	    	$('#down_arrow').addClass('on');
+	    	$('#down_arrow').addClass('goto1a');
+	    	$('#down_arrow').removeClass('goto1b');
+
+	      $('#dig_deeper').addClass('on');
+
+	      $('#section1navitem2').removeClass('on');
+	      $('#section1navitem3').removeClass('on');
+	    } else if ( $(this).hasClass("goto1a") ) {
+	    	$("#content-information").text("This section 1a content is visible to the user but is not useful for SEO purposes it gets switched out via javascript.");
+
+	    	$('#up_arrow').addClass('on');
+	    	$('#up_arrow').addClass('goto1');
+	    	$('#up_arrow').removeClass('goto1a');
+
+	    	$('#down_arrow').addClass('on');
+	    	$('#down_arrow').removeClass('goto1a');
+	    	$('#down_arrow').addClass('goto1b');
+
+	      $('#dig_deeper').addClass('on');
+
+	      $('#section1navitem2').addClass('on');
+	      $('#section1navitem3').removeClass('on');
+	    }
+
+    });
+
+    $('#down_arrow').click(function(){ // if #down_arrow clicked
+      
+			if ( $(this).hasClass("goto1a") ) {
+	    	$("#content-information").text("This section 1a content is visible to the user but is not useful for SEO purposes it gets switched out via javascript.");
+
+	    	$('#up_arrow').addClass('on');
+	    	$('#up_arrow').addClass('goto1');
+	    	$('#up_arrow').removeClass('goto1a');
+
+	    	$('#down_arrow').addClass('on');
+	    	$('#down_arrow').removeClass('goto1a');
+	    	$('#down_arrow').addClass('goto1b');
+
+	      $('#dig_deeper').addClass('on');
+
+	      $('#section1navitem2').addClass('on');
+	      $('#section1navitem3').removeClass('on');
+	    } else if ( $(this).hasClass("goto1b") ) {
+	      $("#content-information").text("This section 1b content is visible to the user but is not useful for SEO purposes it gets switched out via javascript.");
+
+	    	$('#up_arrow').addClass('on');
+	    	$('#up_arrow').removeClass('goto1');
+	    	$('#up_arrow').addClass('goto1a');
+
+	    	$('#down_arrow').removeClass('on');
+	    	$('#down_arrow').removeClass('goto1a');
+	    	$('#down_arrow').removeClass('goto1b');
+
+	      $('#dig_deeper').addClass('on');
+
+	      $('#section1navitem2').removeClass('on');
+	      $('#section1navitem3').addClass('on');
+	    }
+
+    });
+
+    $('#section1navitem2').click(function(){ // if #section1navitem2 clicked 
+      $("#content-information").text("This section 1a content is visible to the user but is not useful for SEO purposes it gets switched out via javascript.");
+
+      $('#up_arrow').addClass('on');
+      $('#up_arrow').addClass('goto1');
+      $('#up_arrow').removeClass('goto1a');
+
+      $('#down_arrow').addClass('on');
+      $('#down_arrow').removeClass('goto1a');
+      $('#down_arrow').addClass('goto1b');
+ 
+      $('#dig_deeper').addClass('on');
+
+      $('#section1navitem2').addClass('on');
+      $('#section1navitem3').removeClass('on');
+    });
+
+    $('#section1navitem3').click(function(){ // if #section1navitem3 clicked 
+      $("#content-information").text("This section 1b content is visible to the user but is not useful for SEO purposes it gets switched out via javascript.");
+
+      $('#up_arrow').addClass('on');
+      $('#up_arrow').removeClass('goto1');
+      $('#up_arrow').addClass('goto1a');
+
+      $('#down_arrow').removeClass('on');
+      $('#down_arrow').removeClass('goto1a');
+      $('#down_arrow').removeClass('goto1b');
+
+      $('#dig_deeper').addClass('on');
+
+      $('#section1navitem2').removeClass('on');
+      $('#section1navitem3').addClass('on');
+    });
+
+  $win.on("scroll", function () { // on scroll do this
   	//console.log($(this).scrollTop());
 
-  	if ( ($(this).scrollTop() <= winvh) ){
-			$("#nav-information").text("Section 1 Text. This text is visible to the user but is not useful for SEO purposes. This text gets switched out via javascript.");
+  	if ( ($(this).scrollTop() <= winvh) ){ // if scrolled to multitouch table
+			$("#content-information").text("This section 1 content is visible to the user but is not useful for SEO purposes it gets switched out via javascript.");
 
 			$('#tablemenu').addClass('section1');
 			$('#section1').addClass('section1');
@@ -157,10 +296,20 @@ $(document).ready(function($) {
     	$('#tablemenu').removeClass('section3');
     	$('#section3').addClass('section3');
     	$('#section3navitem').removeClass('on');
+
+    	$('#up_arrow').removeClass('on');
+    	$('#up_arrow').removeClass('goto1');
+    	$('#up_arrow').removeClass('goto1a');
+
+    	$('#down_arrow').addClass('on');
+    	$('#down_arrow').addClass('goto1a');
+    	$('#down_arrow').removeClass('goto1b');
+
+      $('#dig_deeper').addClass('on');
 		}
 
-		else if ( ($(this).scrollTop() > winvh) && ($(this).scrollTop() <= winvh*2) ){
-			$("#nav-information").text("Section 2 Text. This text is visible to the user but is not useful for SEO purposes. This text gets switched out via javascript.");
+		else if ( ($(this).scrollTop() > winvh) && ($(this).scrollTop() <= winvh*2) ){ // iff scrolled to gallery
+			$("#content-information").text("This section 2 content is visible to the user but is not useful for SEO purposes it gets switched out via javascript.");
 
 			$('#tablemenu').addClass('section2');
 			$('#section2').addClass('section2');
@@ -173,10 +322,14 @@ $(document).ready(function($) {
     	$('#tablemenu').removeClass('section3');
     	$('#section3').addClass('section3');
     	$('#section3navitem').removeClass('on');
+
+    	$('#up_arrow').removeClass('on');
+    	$('#down_arrow').removeClass('on');
+      $('#dig_deeper').removeClass('on');
 		}
 
-		else {
-			$("#nav-information").text("Section 3 Text. This text is visible to the user but is not useful for SEO purposes. This text gets switched out via javascript.");
+		else { // if scrolled to contact
+			$("#content-information").text("This section 3 content is visible to the user but is not useful for SEO purposes it gets switched out via javascript.");
 
 			$('#tablemenu').addClass('section3');
 			$('#section3').addClass('section3');
@@ -189,6 +342,12 @@ $(document).ready(function($) {
     	$('#tablemenu').removeClass('section2');
     	$('#section2').addClass('section2');
     	$('#section2navitem').removeClass('on');
+
+    	$('#section1navitem').removeClass('on');
+
+    	$('#up_arrow').removeClass('on');
+    	$('#down_arrow').removeClass('on');
+      $('#dig_deeper').removeClass('on');
 		}
 		
 

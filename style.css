@@ -1,54 +1,77 @@
 html, body {
-	margin: 0; 
-	padding: 0; 
+	margin:0; 
+	padding:0; 
 	color:#fff;
 }
 
+#socialicon, #tableicon, #ideumicon {
+	display:inline-block;
+}
+#ideumicon { /* fix the offset of the image - alternatively we could trim the original image file */
+  position:relative;
+  left:-18px;
+}
+#socialicon img, #tableicon img { /* standardize the size of the icons in header */
+ width:64px;
+}
+
+/* default values for arrow display */
+#dig_deeper, #down_arrow, #up_arrow {
+	height:59px;
+	visibility:hidden;
+}
+#dig_deeper.on, #down_arrow.on, #up_arrow.on {
+	visibility:visible;
+}
+#up_arrow:hover, #down_arrow:hover {
+	cursor:pointer;
+}
+
 #svg {
-	background-color: rgb(243,112,104);
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	z-index: 1;
+	background-color:rgb(243,112,104);
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	min-width:100%;
+	min-height:100%;
+	width:auto;
+	height:auto;
+	z-index:1;
 }
 
 #Layer_1 {
-	fill: white;
+	fill:white;
 }
 
 video {
 	background-image:url("/images/background.png");
-	height: auto;
-	min-height: 100%;
-	min-width: 100%;
-	position: fixed;
+	height:auto;
+	min-height:100%;
+	min-width:100%;
+	position:fixed;
 		top: 0; right: 0; bottom: 0; left: 0;
-	width: auto;
-	z-index: 1;
+	width:auto;
+	z-index:1;
 }
 
 #starting_links {
-	padding-top: 20px;
+	padding-top:20px;
 }
 
 #content-block {
-  height: 30%;
-  margin: auto;
-	padding-top: 50px;
-	position: absolute;
+  height:30%;
+  margin:auto;
+	padding-top:50px;
+	position:absolute;
     top: 0; right: 0; bottom: 0; left: 0;
 }
 
-#nav-information {
-	border-bottom-color: white;
-	border-bottom-width: 2px; 
-	padding: .5em 0 10px;
+#content-information {
+	border-bottom-color:white;
+	border-bottom-width:2px; 
+	padding:.5em 0 10px;
 }
 
 body {
@@ -59,12 +82,12 @@ body {
 
 /* ### begin clearfix helper class ### */
 .clearfix:after {
-	visibility: hidden;
-	display: block;
-	font-size: 0;
-	content: " ";
-	clear: both;
-	height: 0;
+	visibility:hidden;
+	display:block;
+	font-size:0;
+	content:" ";
+	clear:both;
+	height:0;
 }
 .clearfix { 
 	display:inline-block; 
@@ -80,11 +103,31 @@ body {
 /* ### end clearfix helper class ### */
 
 #scrollnav {
-	height: 112px;
-	margin: auto;
-	position: fixed;
+	height:183px;
+	margin:auto;
+	position:fixed;
 		top: 0; right: 0; bottom: 0; /* do not set left value */
 }
+
+/* begin settup of fixed sections vertical offsets */
+#text {
+	position:fixed;
+		top:30%;
+}
+#menu {
+	position:fixed;
+		top:30%;
+}
+#starting_links {
+	position:fixed;
+	width:100%;
+}
+.text-display {
+	position:relative;
+		top:30%;
+	visibility:hidden;
+}
+/* end settup of fixed sections vertical offsets */
 
 /* ### begin menu styles ### */
 #menu {
@@ -98,8 +141,9 @@ body {
 		top:30%;
 	transition: all 0.25s ease;
 }
+
 #tablemenu ul {
-	list-style: none;
+	list-style:none;
 }
 /* defualt values for viewability of sub-navigation */
 #tablemenu ul li ul  {
@@ -107,67 +151,55 @@ body {
 }
 #tablemenu ul li a {
 	color:#fff;
-	text-transform: uppercase;
-}
-/* ### begin menu styles ### */
-
-#text {
-	position:fixed;
-		top:30%;
-}
-#menu {
-	position:fixed;
-		top:30%;
-}
-#starting_links {
-	position:fixed;
-	width:100%;
-}
-#tableicon img {
- width:64px;
-}
-
-/* starting (section1) values for viewability of sub-navigation - show #section1navitemsub-navigation only */
-#tablemenu.section1 ul li#section1navitem ul  {
-	display:block !important;
-}
-#tablemenu.section1 ul li#section2navitem ul  {
-	display:none;
-}
-#tablemenu.section1 ul li#section3navitem ul  {
-	display:none;
-}
-
-/* section2 values for viewability of sub-navigation - show #section2navitem sub-navigation only */
-#tablemenu.section2 ul li#section1navitem ul  {
-	display:none;
-}
-#tablemenu.section2 ul li#section2navitem ul  {
-	display:block;
-}
-#tablemenu.section2 ul li#section3navitem ul {
-	display:none;
-}
-
-/* section3 values for viewability of sub-navigation - show #section3navitem sub-navigation only */
-#tablemenu.past-section3 ul li#section1navitem ul  {
-	display:none;
-}
-#tablemenu.section3 ul li#section2navitem ul  {
-	display:none;
-}
-#tablemenu.section3 ul li#section3navitem ul {
-	display:block;
+	text-transform:uppercase;
 }
 
 #tablemenu ul li.on {
 	color:#666;
 	font-weight:bold; /*temp use only*/
 }
+#tablemenu ul li.on ul {
+	display:block;
+}
 #tablemenu ul li.on ul li {
 	color:#fff;
 	font-weight:normal; /*temp use only*/
 }
+
+	/* starting (section1) values for viewability of sub-navigation - show #section1navitemsub-navigation only */
+	#tablemenu.section1 ul li#section1navitem ul  {
+		display:block !important;
+	}
+	#tablemenu.section1 ul li#section2navitem ul  {
+		display:none;
+	}
+	#tablemenu.section1 ul li#section3navitem ul  {
+		display:none;
+	}
+
+	/* section2 values for viewability of sub-navigation - show #section2navitem sub-navigation only */
+	#tablemenu.section2 ul li#section1navitem ul  {
+		display:none;
+	}
+	#tablemenu.section2 ul li#section2navitem ul  {
+		display:block;
+	}
+	#tablemenu.section2 ul li#section3navitem ul {
+		display:none;
+	}
+
+	/* section3 values for viewability of sub-navigation - show #section3navitem sub-navigation only */
+	#tablemenu.past-section3 ul li#section1navitem ul  {
+		display:none;
+	}
+	#tablemenu.section3 ul li#section2navitem ul  {
+		display:none;
+	}
+	#tablemenu.section3 ul li#section3navitem ul {
+		display:block;
+	}
+/* ### end menu styles ### */
+
 #section1, #section2, #section3  {
 	background-image:none;
 	background-size:cover;
@@ -185,11 +217,5 @@ body {
 #section3 {
 	background-image:url(/images/background.png);
 	position:inherit;
-}
-
-.text-display {
-	position:relative;
-		top:30%;
-	visibility: hidden;
 }
 
