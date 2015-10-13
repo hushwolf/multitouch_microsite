@@ -77,8 +77,9 @@
 						<p>Vivamus ut lorem posuere, faucibus elit at, molestie mauris. Donec et enim elementum erat efficitur iaculis. Morbi bibendum tincidunt velit ut porttitor. Proin vitae tortor magna. Fusce rutrum nisl fringilla tellus elementum mollis. Ut faucibus leo feugiat, finibus ex nec, vestibulum mauris. Duis a augue metus. Sed sit amet leo tortor. Suspendisse sed molestie neque. Donec eu felis eget tortor dapibus posuere in non tortor</p>
 					</div>
 				</section>
-				<section class="unit-push-20 unit-30" id="display_table">
-					<img id="table_image">
+				<section class="unit-push-20 unit-30">
+					<div id="table_image">
+					</div>
 				</section>
 			</section>
 
